@@ -38,7 +38,8 @@ class HeroesChannel extends ApplicationChannel {
     final router = Router();
     //
     router
-      .route('/heroes')
+      //.route('/heroes')
+      .route('/heroes/[:id]') // added id filter
       .link(() => HeroesController());
     ///
     /*
