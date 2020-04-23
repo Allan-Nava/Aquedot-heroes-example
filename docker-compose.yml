@@ -1,0 +1,21 @@
+version: '3'
+services:
+  my-app:
+    build: .
+    ports:
+    - "80:80"
+
+  db:
+    image: "postgres:11"
+    container_name: "postgres_database"
+    environment:
+      - POSTGRES_PASSWORD=password-from-config-yaml
+      - POSTGRES_USER=user-from-config-yaml
+      - POSTGRES_DB=db-from-config-yaml
+    ports:
+      - "65432:port-from-config-yaml" # If you want to expose the db from the container
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data: {}
