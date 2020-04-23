@@ -1,5 +1,16 @@
+/** 
+*  channel.dart
+*  heroes_app 2020-04-23
+*  heroes_app 2020-04-23
+*
+*  Created by [Allan Nava].
+*  Updated by [Allan Nava]
+*  Copyright © 2020 [Allan Nava]. All rights reserved.
+*/
 import 'heroes.dart';
-
+///
+import 'controller/heroes_controller.dart';
+///
 /// This type initializes an application.
 ///
 /// Override methods in this class to set up routes and initialize services like
@@ -25,7 +36,11 @@ class HeroesChannel extends ApplicationChannel {
   @override
   Controller get entryPoint {
     final router = Router();
-
+    //
+    router
+      .route('/heroes')
+      .link(() => HeroesController());
+    ///
     // Prefer to use `link` instead of `linkFunction`.
     // See: https://aqueduct.io/docs/http/request_controller/
     router

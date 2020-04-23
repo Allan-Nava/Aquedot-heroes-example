@@ -1,5 +1,13 @@
 # heroes
 
+
+We now have a application that will return a list of heroes. In the project directory, run the following command from the command-line:
+
+```
+aqueduct serve
+```
+
+
 ## Running the Application Locally
 
 Run `aqueduct serve` from this directory to run the application. For running within an IDE, run `bin/main.dart`. By default, a configuration file named `config.yaml` will be used.
