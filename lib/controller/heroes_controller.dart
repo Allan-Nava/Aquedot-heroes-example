@@ -34,5 +34,16 @@ class HeroesController extends Controller {
   }
     return Response.ok(_heroes);
   }
+  
+  @Operation.get('id')
+  Future<Response> getHeroByID() async {
+    final id = int.parse(request.path.variables['id']);
+    final hero = _heroes.firstWhere((hero) => hero['id'] == id, orElse: () => null);
+    if (hero == null) {
+      return Response.notFound();
+    }
+
+    return Response.ok(hero);
+  }
 }
 ///
