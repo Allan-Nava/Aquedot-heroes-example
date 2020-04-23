@@ -35,6 +35,11 @@ class HeroesController extends Controller {
     return Response.ok(_heroes);
   }
   
+  @Operation.get()
+  Future<Response> getAllHeroes() async {
+    return Response.ok(_heroes);
+  }
+  
   @Operation.get('id')
   Future<Response> getHeroByID() async {
     final id = int.parse(request.path.variables['id']);
