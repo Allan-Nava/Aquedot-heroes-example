@@ -26,7 +26,7 @@ class HeroesChannel extends ApplicationChannel {
   Future prepare() async {
     logger.onRecord.listen((rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
   }
-
+  ///
   /// Construct the request channel.
   ///
   /// Return an instance of some [Controller] that will be the initial receiver
@@ -51,4 +51,6 @@ class HeroesChannel extends ApplicationChannel {
 
     return router;
   }
+  ///
 }
+///

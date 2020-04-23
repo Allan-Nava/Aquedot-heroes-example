@@ -1,9 +1,9 @@
 # heroes
 
-
 We now have a application that will return a list of heroes. In the project directory, run the following command from the command-line:
 
-```
+```bash
+pub run aqueduct serve
 aqueduct serve
 ```
 
