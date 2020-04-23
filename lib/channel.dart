@@ -41,6 +41,17 @@ class HeroesChannel extends ApplicationChannel {
       .route('/heroes')
       .link(() => HeroesController());
     ///
+    /*
+    
+      Each of these objects is a subclass of Controller, giving them the ability to be linked together to handle requests. A request goes through controllers in the order they are linked. A request for the path /users will go through an APIKeyValidator, an Authorizer and finally a UsersController. Each of these controllers has an opportunity to respond, preventing the next controller from receiving the request.∑
+    
+    */
+    //router
+    //  .route('/users')
+    //  .link(() => APIKeyValidator())
+    //  .link(() => Authorizer.bearer())
+    //  .link(() => UsersController());
+    ///
     // Prefer to use `link` instead of `linkFunction`.
     // See: https://aqueduct.io/docs/http/request_controller/
     router
