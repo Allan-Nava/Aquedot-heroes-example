@@ -6,7 +6,7 @@ services:
     - "80:80"
 
   db:
-    image: "postgres:11"
+    image: "postgres:15"
     container_name: "postgres_database"
     environment:
       - POSTGRES_PASSWORD=password-from-config-yaml
